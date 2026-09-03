@@ -1,7 +1,6 @@
 # Spotify Streaming Analysis
 
-## Dataset: 
-https://www.kaggle.com/datasets/beamhonor0911/spotify-artist-streaming-analytics-20202025
+Dataset: https://www.kaggle.com/datasets/beamhonor0911/spotify-artist-streaming-analytics-20202025
 
 ### First analysis: Finding the top 10 artists streaming
 ```
