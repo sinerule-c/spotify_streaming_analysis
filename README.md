@@ -6,6 +6,7 @@ Dataset: https://www.kaggle.com/datasets/beamhonor0911/spotify-artist-streaming-
 
 ## MySQL Analysis:
 ### First analysis:
+## Top artist
 ```
 SELECT
     artist_name,
@@ -34,6 +35,33 @@ LIMIT 10;
 | The Dawns | 99573871 | 1.68 |
 
 *The most streamed artist is Knot Hart*
+
+## Why is Knot Hart the most streamed artist?
+
+```
+SELECT
+	artist_name,
+    COUNT(*) AS track_count,
+    SUM(stream_count) AS total_streams,
+    ROUND(AVG(stream_count), 2) AS average_streams_per_track
+FROM spotify
+GROUP BY artist_name
+ORDER BY total_streams DESC
+LIMIT 10;
+```
+| artist_name | track_count | total_streams | average_streams_per_track |
+| Knot Hart | 12111 | 1303217036 | 107606.06 |
+| IsleEyre | 5271 | 669929807 | 127097.29 |
+| Ethereal | 3232 | 433176636 | 134027.42 |
+| Sterling Zen | 2268 | 245065284 | 108053.48 |
+| Rocco Ore | 1709 | 219663605 | 128533.41 |
+| SethStone | 1486 | 179681824 | 120916.44 |
+| ElaraRain | 1111 | 132996215 | 119708.56 |
+| ValeGlass | 981 | 120591894 | 122927.52 |
+| Frost Nova | 862 | 104088727 | 120752.58 |
+| The Dawns | 750 | 99573871 | 132765.16 |
+
+*Knot Hart has the most number of tracks. This could one of the reasons why he is the most streamed artist. Could also see the correlation between highest stream and track counts.*
 
 <br>
 
