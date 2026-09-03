@@ -34,6 +34,8 @@ LIMIT 10;
 
 *The most streamed artist is Knot Hart*
 
+<br>
+
 ### Second analysis:
 ```
 SELECT
@@ -64,3 +66,7 @@ LIMIT 10;
 | Lights | Knot Hart | 16873308 | 0.29 |
 
 *The most streamed song is The Roses by Grove Nova*
+
+<br>
+
+
