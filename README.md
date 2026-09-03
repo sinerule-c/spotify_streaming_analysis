@@ -50,6 +50,7 @@ ORDER BY total_streams DESC
 LIMIT 10;
 ```
 | artist_name | track_count | total_streams | average_streams_per_track |
+|-|-|-|-|
 | Knot Hart | 12111 | 1303217036 | 107606.06 |
 | IsleEyre | 5271 | 669929807 | 127097.29 |
 | Ethereal | 3232 | 433176636 | 134027.42 |
