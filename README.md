@@ -4,6 +4,7 @@ Dataset: https://www.kaggle.com/datasets/beamhonor0911/spotify-artist-streaming-
 
 <br>
 
+## MySQL Analysis:
 ### First analysis:
 ```
 SELECT
