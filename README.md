@@ -5,7 +5,7 @@ Dataset: https://www.kaggle.com/datasets/beamhonor0911/spotify-artist-streaming-
 <br>
 
 ## MySQL Analysis:
-### First analysis:
+### 1. First analysis:
 ## Top artist
 ```
 SELECT
@@ -34,7 +34,7 @@ LIMIT 10;
 | Frost Nova | 104088727 | 1.76 |
 | The Dawns | 99573871 | 1.68 |
 
-*The most streamed artist is Knot Hart*
+**The most streamed artist is Knot Hart**
 
 ## Why is Knot Hart the most streamed artist?
 
@@ -62,11 +62,11 @@ LIMIT 10;
 | Frost Nova | 862 | 104088727 | 120752.58 |
 | The Dawns | 750 | 99573871 | 132765.16 |
 
-*Knot Hart has the most number of tracks. This could one of the reasons why he is the most streamed artist. Could also see the correlation between highest stream and track counts.*
+**Knot Hart has the most number of tracks. This could one of the reasons why he is the most streamed artist. Could also see the correlation between highest stream and track counts.**
 
 <br>
-
-### Second analysis:
+:
+### 2. Second analysis:
 ```
 SELECT
 	track_name,
@@ -95,7 +95,7 @@ LIMIT 10;
 | Lights | Dean System | 17250422 | 0.29 |
 | Lights | Knot Hart | 16873308 | 0.29 |
 
-*The most streamed song is The Roses by Grove Nova*
+**The most streamed song is The Roses by Grove Nova**
 
 <br>
 
