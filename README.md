@@ -101,4 +101,18 @@ LIMIT 10;
 
 <br>
 
+** Lets investigate what distinguishes 'The Roses' by Grove Nova from other tracks
+First retrieving its full detail:
+```
+SELECT *
+FROM spotify
+WHERE artist_name = 'Grove Nova'
+	AND track_name = 'The Roses'
+ORDER BY stream_count DESC;
+```
+| track_id | track_name | artist_name | album_name | release_date | genre | duration_ms | popularity | danceability | energy | key | loudness | mode | instrumentalness | tempo | stream_count | country | explicit | label | release_year | release_month | release_day_of_week | duration_minutes | popularity_category | loudness_category | key_name | mode_name | is_explicit_bool | release_quarter | is_weekend_release | log_stream_count | upbeat_score | artist_track_count |
+|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
+| c7a7d73d-9531-4bdc-b195-ea7d81b9a028 | The Roses | Grove Nova | Frozen Flames | 2024-04-29 | Alternative | 228188 | 90 | 0.6297 | 0.6017 | 6 | -8.61 | 1 | 0.412 | 151.59 | 43345015 | IN | True | Columbia Records | 2024 | 4 | Monday | 3.8 | Very High | Moderate | F# | Major | True | Q2 | False | 17.5847 | 0.6234 | 124 |
+
+
 
