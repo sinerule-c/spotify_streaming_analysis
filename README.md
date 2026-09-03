@@ -1,6 +1,7 @@
 # Spotify Streaming Analysis
 
-## Dataset: https://www.kaggle.com/datasets/beamhonor0911/spotify-artist-streaming-analytics-20202025
+## Dataset: 
+https://www.kaggle.com/datasets/beamhonor0911/spotify-artist-streaming-analytics-20202025
 
 ### First analysis: Finding the top 10 artists streaming
 ```
@@ -30,4 +31,4 @@ LIMIT 10;
 | Frost Nova | 104088727 | 1.76 |
 | The Dawns | 99573871 | 1.68 |
 
-The most streamed artist is Knot Hart
+*The most streamed artist is Knot Hart*
