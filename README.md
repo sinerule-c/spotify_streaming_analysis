@@ -36,8 +36,9 @@ LIMIT 10;
 
 **The most streamed artist is Knot Hart**
 
-## Why is Knot Hart the most streamed artist?
+<br>
 
+## Why is Knot Hart the most streamed artist?
 ```
 SELECT
 	artist_name,
@@ -65,7 +66,9 @@ LIMIT 10;
 **Knot Hart has the most number of tracks. This could one of the reasons why he is the most streamed artist. Could also see the correlation between highest stream and track counts.**
 
 <br>
+
 :
+
 ### 2. Second analysis:
 ```
 SELECT
