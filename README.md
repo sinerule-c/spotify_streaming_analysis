@@ -63,7 +63,7 @@ LIMIT 10;
 | Frost Nova | 862 | 104088727 | 120752.58 |
 | The Dawns | 750 | 99573871 | 132765.16 |
 
-**Knot Hart has the most number of tracks. This could one of the reasons why he is the most streamed artist. Could also see the correlation between highest stream and track counts.**
+**Even though he has the lowest average_streams_per_track, Knot Hart is the most streamed artist, mainly because he has the most number of tracks.**
 
 <br>
 
