@@ -67,9 +67,8 @@ LIMIT 10;
 
 <br>
 
-:
-
 ### 2. Second analysis:
+## Top track
 ```
 SELECT
 	track_name,
