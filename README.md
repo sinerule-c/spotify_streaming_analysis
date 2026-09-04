@@ -114,5 +114,19 @@ ORDER BY stream_count DESC;
 |-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
 | c7a7d73d-9531-4bdc-b195-ea7d81b9a028 | The Roses | Grove Nova | Frozen Flames | 2024-04-29 | Alternative | 228188 | 90 | 0.6297 | 0.6017 | 6 | -8.61 | 1 | 0.412 | 151.59 | 43345015 | IN | True | Columbia Records | 2024 | 4 | Monday | 3.8 | Very High | Moderate | F# | Major | True | Q2 | False | 17.5847 | 0.6234 | 124 |
 
+**Investigating whether release date affects the stream count**
+```
+SELECT
+	DATE_FORMAT(release_date, '%b %Y') AS month_year,
+    COUNT(*) AS track_count,
+    ROUND(AVG(stream_count), 2) AS average_streams
+FROM spotify
+WHERE release_date >= '2024-04-01'
+	AND release_date < '2024-05-01';
+```
 
+| month_year | track_count | average_streams |
+|-|-|-|
+| Apr 2024 | 676 | 200843.63 |
 
+**The Roses has 43,345,015 streams while songs released in April 2024, on average has 200,843 streams. This tells us release date alone cannot explain why it is the most streamed track.**
