@@ -114,6 +114,8 @@ ORDER BY stream_count DESC;
 |-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
 | c7a7d73d-9531-4bdc-b195-ea7d81b9a028 | The Roses | Grove Nova | Frozen Flames | 2024-04-29 | Alternative | 228188 | 90 | 0.6297 | 0.6017 | 6 | -8.61 | 1 | 0.412 | 151.59 | 43345015 | IN | True | Columbia Records | 2024 | 4 | Monday | 3.8 | Very High | Moderate | F# | Major | True | Q2 | False | 17.5847 | 0.6234 | 124 |
 
+<br>
+
 **Investigating whether release date affects the stream count**
 ```
 SELECT
