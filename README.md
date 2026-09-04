@@ -175,3 +175,5 @@ ORDER BY median_streams DESC;
 | Country | 1294 | 168178253 | 129967.74 | 13868.00 |
 | Soul | 325 | 23742562 | 73054.04 | 13333.00 |
 | Disco | 198 | 28737010 | 145136.41 | 12559.50 |
+
+**Alternative tracks do not typically receive unusually high streams. Although Roses belongs to the Alternative genre, genre alone does not explain why it is the most-streamed track.**
