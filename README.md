@@ -116,19 +116,62 @@ ORDER BY stream_count DESC;
 
 <br>
 
-**Investigating whether release date affects the stream count**
 ```
+WITH ranked AS (
+    SELECT
+        genre,
+        stream_count,
+        ROW_NUMBER() OVER (
+            PARTITION BY genre
+            ORDER BY stream_count
+        ) AS row_num,
+        COUNT(*) OVER (
+            PARTITION BY genre
+        ) AS total_rows
+    FROM spotify
+    WHERE stream_count IS NOT NULL
+)
+
 SELECT
-	DATE_FORMAT(release_date, '%b %Y') AS month_year,
+    genre,
     COUNT(*) AS track_count,
-    ROUND(AVG(stream_count), 2) AS average_streams
-FROM spotify
-WHERE release_date >= '2024-04-01'
-	AND release_date < '2024-05-01';
+    SUM(stream_count) AS total_streams,
+    ROUND(AVG(stream_count), 2) AS average_streams,
+    ROUND(
+        AVG(
+            CASE
+                WHEN row_num IN (
+                    FLOOR((total_rows + 1) / 2),
+                    FLOOR((total_rows + 2) / 2)
+                )
+                THEN stream_count
+            END
+        ),
+        2
+    ) AS median_streams
+FROM ranked
+GROUP BY genre
+ORDER BY median_streams DESC;
 ```
-
-| month_year | track_count | average_streams |
-|-|-|-|
-| Apr 2024 | 676 | 200843.63 |
-
-**The Roses has 43,345,015 streams while songs released in April 2024, on average has 200,843 streams. This tells us release date alone cannot explain why it is the most streamed track.**
+| genre | track_count | total_streams | average_streams | median_streams |
+|-|-|-|-|-|
+| Punk | 384 | 44073764 | 114775.43 | 18547.50 |
+| Jazz | 810 | 105622153 | 130397.72 | 18161.00 |
+| Classical | 357 | 28340064 | 79383.93 | 17407.00 |
+| Hip-Hop | 3930 | 436093929 | 110965.38 | 16607.00 |
+| EDM | 2407 | 292418495 | 121486.70 | 16588.00 |
+| Metal | 1695 | 212286827 | 125242.97 | 16303.00 |
+| Pop | 12915 | 1649081624 | 127687.31 | 16150.00 |
+| R&B | 13273 | 1458281734 | 109868.28 | 16131.00 |
+| Rock | 2370 | 314706623 | 132787.60 | 16068.00 |
+| Alternative | 759 | 129498917 | 170617.81 | 15909.00 |
+| Latin | 2661 | 340782388 | 128065.53 | 15841.00 |
+| Reggaeton | 785 | 72382728 | 92207.30 | 15394.00 |
+| Indie | 1065 | 131247478 | 123237.07 | 14918.00 |
+| Folk | 2249 | 227814482 | 101295.90 | 14679.00 |
+| K-Pop | 1384 | 153095403 | 110618.07 | 14579.50 |
+| Trap | 915 | 75303492 | 82298.90 | 14508.00 |
+| Afrobeats | 224 | 27258288 | 121688.79 | 14105.50 |
+| Country | 1294 | 168178253 | 129967.74 | 13868.00 |
+| Soul | 325 | 23742562 | 73054.04 | 13333.00 |
+| Disco | 198 | 28737010 | 145136.41 | 12559.50 |
